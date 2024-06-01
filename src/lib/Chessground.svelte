@@ -24,7 +24,7 @@
 		orientation?: Color;
 		fen?: FEN;
 		turnColor?: Color;
-		check: Color | boolean;
+		check?: Color | boolean;
 		lastMove?: Key[];
 		selected?: Key;
 		coordinates?: boolean;
