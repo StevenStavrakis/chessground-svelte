@@ -1,6 +1,6 @@
 /// <reference types="svelte" />
 import type { Config } from 'chessground/config';
-import type { Color, Key } from 'chessground/types';
+import type { Key } from 'chessground/types';
 interface $$__sveltets_2_IsomorphicComponent<Props extends Record<string, any> = any, Events extends Record<string, any> = any, Slots extends Record<string, any> = any, Exports = {}, Bindings = string> {
     new (options: import('svelte').ComponentConstructorOptions<Props>): import('svelte').SvelteComponent<Props, Events, Slots> & {
         $$bindings?: Bindings;
@@ -16,7 +16,7 @@ declare const Chessground: $$__sveltets_2_IsomorphicComponent<{
     orientation?: "white" | "black" | undefined;
     fen?: string | undefined;
     turnColor?: "white" | "black" | undefined;
-    check: Color | boolean;
+    check?: boolean | "white" | "black" | undefined;
     lastMove?: Key[] | undefined;
     selected?: Key | undefined;
     coordinates?: boolean | undefined;
