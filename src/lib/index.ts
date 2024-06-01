@@ -1,1 +1,2 @@
-// Reexport your entry components here
+import Chessground from "./Chessground.svelte";
+export { Chessground }
