@@ -5,8 +5,8 @@ import type { Drop, Key, MouchEvent, Piece, PiecesDiff } from "chessground/types
 export declare class ChessgroundViewmodel {
     config: Config | undefined;
     div: HTMLDivElement | undefined;
-    cg: Api | null;
-    constructor();
+    cg: Api | undefined;
+    constructor(div: HTMLDivElement, config: Config);
     set(config: Config): void;
     getState(): import("chessground/state").State;
     getFen(): string;
