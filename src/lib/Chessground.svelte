@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Config } from 'chessground/config';
 	import type { FEN, Color, Key } from 'chessground/types';
-	import { ChessgroundViewmodel } from './ChessgroundViewmodel.svelte.ts';
+	import { ChessgroundViewmodel } from './ChessgroundViewmodel.svelte.js';
 
 	let {
 		className = 'cg-default-style',
