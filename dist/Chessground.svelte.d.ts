@@ -1,6 +1,7 @@
 /// <reference types="svelte" />
 import type { Config } from 'chessground/config';
 import type { Key } from 'chessground/types';
+import { ChessgroundViewmodel } from './ChessgroundViewmodel.svelte.js';
 interface $$__sveltets_2_IsomorphicComponent<Props extends Record<string, any> = any, Events extends Record<string, any> = any, Slots extends Record<string, any> = any, Exports = {}, Bindings = string> {
     new (options: import('svelte').ComponentConstructorOptions<Props>): import('svelte').SvelteComponent<Props, Events, Slots> & {
         $$bindings?: Bindings;
@@ -29,6 +30,8 @@ declare const Chessground: $$__sveltets_2_IsomorphicComponent<{
     config?: Config | undefined;
 }, {
     [evt: string]: CustomEvent<any>;
-}, {}, Record<string, any>, "">;
+}, {}, {
+    getVm: () => ChessgroundViewmodel;
+}, "">;
 type Chessground = InstanceType<typeof Chessground>;
 export default Chessground;

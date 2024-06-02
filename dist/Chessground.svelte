@@ -34,7 +34,9 @@ let configuration = $derived({
 });
 let vm = new ChessgroundViewmodel();
 let ref = $state();
-$inspect(vm);
+export function getVm() {
+  return vm;
+}
 $effect(() => {
   if (configuration) {
     vm.config = configuration;
