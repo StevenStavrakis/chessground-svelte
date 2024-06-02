@@ -4,7 +4,7 @@
 	import { ChessgroundViewmodel } from './ChessgroundViewmodel.svelte.js';
 
 	let {
-		className,
+		className = 'cg-default-style',
 		orientation,
 		fen,
 		turnColor,
@@ -56,6 +56,7 @@
 
 	let vm: ChessgroundViewmodel = new ChessgroundViewmodel();
 	let ref: HTMLDivElement | undefined = $state();
+	$inspect(vm)
 
 	$effect(() => {
 		if (configuration) {
