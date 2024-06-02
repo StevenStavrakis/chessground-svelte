@@ -4,6 +4,7 @@
 	import { ChessgroundViewmodel } from './ChessgroundViewmodel.svelte.js';
 
 	let {
+		vm,
 		className = 'cg-default-style',
 		orientation,
 		fen,
@@ -20,6 +21,7 @@
 		blockTouchScroll,
 		config
 	}: {
+		vm: ChessgroundViewmodel,
 		className?: string;
 		orientation?: Color;
 		fen?: FEN;
@@ -54,12 +56,7 @@
 		...config
 	});
 
-	let vm: ChessgroundViewmodel = new ChessgroundViewmodel();
 	let ref: HTMLDivElement | undefined = $state();
-
-	export function getVm() {
-		return vm;
-	}
 
 	$effect(() => {
 		if (configuration) {

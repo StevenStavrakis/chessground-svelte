@@ -1,9 +1,11 @@
 <script>
-	import Chessground from "$lib/Chessground.svelte";
-
+	import Chessground from '$lib/Chessground.svelte';
+	import { ChessgroundViewmodel } from '$lib/ChessgroundViewmodel.svelte.ts';
+	const vm = new ChessgroundViewmodel();
 </script>
+
 <h1>Welcome to your library project</h1>
 <p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
-<Chessground />
+<Chessground {vm} />
