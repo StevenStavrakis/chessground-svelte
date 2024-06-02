@@ -1,15 +1,16 @@
 import { Chessground } from "chessground";
 export class ChessgroundViewmodel {
-    config = $state();
-    div = $state();
     cg = $state();
-    constructor(div, config) {
-        this.div = div;
-        this.config = config;
+    constructor() {
+    }
+    initialize(config, div) {
         this.cg = Chessground(div, config);
     }
     set(config) {
-        this.config = config;
+        if (!this.cg) {
+            throw new Error("ChessgroundViewmodel not initialized");
+        }
+        this.cg.set(config);
     }
     getState() {
         if (!this.cg) {

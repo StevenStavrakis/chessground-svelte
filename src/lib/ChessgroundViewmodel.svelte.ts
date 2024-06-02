@@ -5,18 +5,19 @@ import type { DrawShape } from "chessground/draw";
 import type { Drop, Key, MouchEvent, Piece, PiecesDiff } from "chessground/types";
 
 export class ChessgroundViewmodel {
-    config: Config | undefined = $state();
-    div: HTMLDivElement | undefined = $state();
     cg: Api | undefined = $state();
 
-    constructor(div: HTMLDivElement, config: Config) {
-        this.div = div;
-        this.config = config;
-        this.cg = Chessground(div, config);
+    constructor() {
     }
 
+    initialize(config: Config, div: HTMLDivElement) {
+        this.cg = Chessground(div, config);
+    }
     set(config: Config) {
-        this.config = config;
+        if (!this.cg) {
+            throw new Error("ChessgroundViewmodel not initialized");
+        }
+        this.cg.set(config);
     }
 
     getState() {

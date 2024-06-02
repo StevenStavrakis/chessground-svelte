@@ -3,10 +3,9 @@ import type { Config } from "chessground/config";
 import type { DrawShape } from "chessground/draw";
 import type { Drop, Key, MouchEvent, Piece, PiecesDiff } from "chessground/types";
 export declare class ChessgroundViewmodel {
-    config: Config | undefined;
-    div: HTMLDivElement | undefined;
     cg: Api | undefined;
-    constructor(div: HTMLDivElement, config: Config);
+    constructor();
+    initialize(config: Config, div: HTMLDivElement): void;
     set(config: Config): void;
     getState(): import("chessground/state").State;
     getFen(): string;
