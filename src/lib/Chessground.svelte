@@ -56,7 +56,10 @@
 
 	let vm: ChessgroundViewmodel = new ChessgroundViewmodel();
 	let ref: HTMLDivElement | undefined = $state();
-	$inspect(vm)
+
+	export function getVm() {
+		return vm;
+	}
 
 	$effect(() => {
 		if (configuration) {
