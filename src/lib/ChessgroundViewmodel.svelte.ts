@@ -7,21 +7,16 @@ import type { Drop, Key, MouchEvent, Piece, PiecesDiff } from "chessground/types
 export class ChessgroundViewmodel {
     config: Config | undefined = $state();
     div: HTMLDivElement | undefined = $state();
-    cg: Api | null = $derived.by(() => {
-        if (!this.div) {
-            return null;
-        }
-        return Chessground(this.div, this.config)
-    });
+    cg: Api | undefined = $state();
 
-    constructor() {
+    constructor(div: HTMLDivElement, config: Config) {
+        this.div = div;
+        this.config = config;
+        this.cg = Chessground(div, config);
     }
 
     set(config: Config) {
-        if (!this.cg) {
-            throw new Error("ChessgroundViewmodel not initialized");
-        }
-        this.cg.set(config);
+        this.config = config;
     }
 
     getState() {
