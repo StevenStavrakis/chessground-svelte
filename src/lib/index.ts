@@ -1,2 +1,3 @@
 import Chessground from "./Chessground.svelte";
-export { Chessground }
+import { ChessgroundViewmodel } from "./ChessgroundViewmodel.svelte.ts";
+export { Chessground, ChessgroundViewmodel }
