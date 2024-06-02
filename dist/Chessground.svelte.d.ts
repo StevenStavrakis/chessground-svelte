@@ -13,6 +13,7 @@ interface $$__sveltets_2_IsomorphicComponent<Props extends Record<string, any> =
     z_$$bindings?: Bindings;
 }
 declare const Chessground: $$__sveltets_2_IsomorphicComponent<{
+    vm: ChessgroundViewmodel;
     className?: string | undefined;
     orientation?: "white" | "black" | undefined;
     fen?: string | undefined;
@@ -30,8 +31,6 @@ declare const Chessground: $$__sveltets_2_IsomorphicComponent<{
     config?: Config | undefined;
 }, {
     [evt: string]: CustomEvent<any>;
-}, {}, {
-    getVm: () => ChessgroundViewmodel;
-}, "">;
+}, {}, Record<string, any>, "">;
 type Chessground = InstanceType<typeof Chessground>;
 export default Chessground;

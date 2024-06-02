@@ -1,5 +1,6 @@
 <script lang="ts">import { ChessgroundViewmodel } from "./ChessgroundViewmodel.svelte.js";
 let {
+  vm,
   className = "cg-default-style",
   orientation,
   fen,
@@ -32,11 +33,7 @@ let configuration = $derived({
   blockTouchScroll,
   ...config
 });
-let vm = new ChessgroundViewmodel();
 let ref = $state();
-export function getVm() {
-  return vm;
-}
 $effect(() => {
   if (configuration) {
     vm.config = configuration;
