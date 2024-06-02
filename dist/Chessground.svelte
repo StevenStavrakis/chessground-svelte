@@ -1,4 +1,4 @@
-<script lang="ts">import { ChessgroundViewmodel } from "./ChessgroundViewmodel.svelte.ts";
+<script lang="ts">import { ChessgroundViewmodel } from "./ChessgroundViewmodel.svelte.js";
 let {
   className = "cg-default-style",
   orientation,
