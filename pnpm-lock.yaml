@@ -25,6 +25,9 @@ devDependencies:
   '@types/eslint':
     specifier: ^8.56.10
     version: 8.56.10
+  chessops:
+    specifier: ^0.14.1
+    version: 0.14.1
   eslint:
     specifier: ^9.4.0
     version: 9.4.0
@@ -76,6 +79,10 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
+    dev: true
+
+  /@badrap/result@0.2.13:
+    resolution: {integrity: sha512-Qvyzz0dmGY0h8pwvBFo1BznAKf5Y5NXIDiqhPALWtfU7oHbAToCtPu4FlYQ3uysskSWLx8GUiyhe0nv0nDd/7Q==}
     dev: true
 
   /@esbuild/aix-ppc64@0.20.2:
@@ -978,6 +985,12 @@ packages:
   /chessground@9.1.1:
     resolution: {integrity: sha512-X4xrBICrixaLATCn+jGEzk58UXcas+9QqJnwVq9nT7AaX2M1CJLMA0vC7noG0s6Tr2zoAHZ1FOviE5b05MgduQ==}
     dev: false
+
+  /chessops@0.14.1:
+    resolution: {integrity: sha512-CnMcfypDVrl/+MkErK0YMAEvivAAnUQ/2f32C54F9HbmDVEDjvoXJYLnS//+4HWGLqGA5+yDs+Y2T0gsxxLgpQ==}
+    dependencies:
+      '@badrap/result': 0.2.13
+    dev: true
 
   /chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}

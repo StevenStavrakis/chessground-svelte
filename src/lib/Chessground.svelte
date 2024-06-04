@@ -2,6 +2,9 @@
 	import type { Config } from 'chessground/config';
 	import { ChessgroundViewmodel } from './ChessgroundViewmodel.svelte.js';
 	import { untrack } from 'svelte';
+	import { makeSquare, parseUci } from 'chessops/util';
+	import { chessgroundMove } from 'chessops/compat';
+	import { isDrop } from 'chessops/types';
 
 	let {
 		className = 'cg-default-style',
@@ -13,6 +16,21 @@
 
 	let vm: ChessgroundViewmodel = new ChessgroundViewmodel();
 	let ref: HTMLDivElement | undefined = $state();
+
+	export function uciMove(move: string) {
+		let mv = parseUci(move);
+		if (mv === undefined) {
+			throw new Error('Invalid move');
+		}
+		if (isDrop(mv)) {
+			throw new Error('Not handled rn');
+		} else {
+			const from = makeSquare(mv.from);
+			const to = makeSquare(mv.to);
+			// TODO: confirm conversion is correct, maybe type Key
+			vm.move(from, to);
+		}
+	}
 
 	$effect(() => {
 		untrack(() => {
